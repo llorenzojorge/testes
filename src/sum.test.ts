@@ -1,6 +1,18 @@
-import { sum } from "./server"
+import { sum } from "./sum"
 
 describe("sum", () => {
+  let sumResult: number
+
+  beforeAll(() => {
+    sumResult = 10
+    console.log("Executado antes dos testes", sumResult)
+  })
+
+  afterAll(() => {
+    sumResult = 0
+    console.log("Executado depois dos testes", sumResult)
+  })
+
   it("should do of 3 + 7 must be 10", () => {
     const result = sum(3, 7)
 
